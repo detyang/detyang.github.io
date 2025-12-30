@@ -4,35 +4,62 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Det Yang</title>
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 780px; margin: 48px auto; padding: 0 18px; line-height: 1.6; }
-      h1 { margin-bottom: 6px; }
-      .muted { color: #666; }
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      .card { border: 1px solid #eee; border-radius: 14px; padding: 16px 18px; margin: 16px 0; }
-    </style>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="assets/style.css" />
   </head>
+
   <body>
-    <h1>Det Yang</h1>
-    <h3>0576-027-217-312</h3>
-    <div class="muted">Data Scientist · R/Shiny</div>
+    <!-- HERO -->
+    <header class="hero" id="home">
+      <div class="hero__inner">
+        <p class="hero__eyebrow">Route Map: 0576-->027-->217-->312</p>
 
-    <div class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="https://github.com/detyang/Draft_Craft">Draft Craft</a> — NBA draft tracking & analysis</li>
-        <li><a href="https://github.com/detyang/nba-fancolor-30">NBA Fan Color 30</a> — interactive fan rating poster</li>
-      </ul>
-    </div>
+        <h1 class="hero__title">
+          <span class="hero__name">Det Yang</span>
+        </h1>
 
-    <div class="card">
-      <h2>Links</h2>
-      <ul>
-        <li><a href="https://github.com/detyang">GitHub</a></li>
-        <li><a href="mailto:detyang22@gmail.com">Email</a></li>
-        <li><a href="#">Resume (coming soon)</a></li>
-      </ul>
-    </div>
+        <p class="hero__subtitle">
+          Data Scientist building practical tools in R/Shiny and Python,
+          with interests in Basketball Analytics and Ag-Tech.
+        </p>
+
+        <!-- meta links moved to bottom-center; kept empty here to preserve markup structure -->
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="container">
+      <div class="links-bottom" role="navigation" aria-label="Contact links">
+        <a class="hero__link" href="mailto:detyang22@gmail.com" aria-label="Email">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email
+        </a>
+        <span class="hero__dot">•</span>
+        <a class="hero__link" href="https://github.com/detyang" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 17.07 3.633 16.7 3.633 16.7c-1.087-.744.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.76-1.605-2.665-.305-5.467-1.333-5.467-5.932 0-1.31.468-2.381 1.235-3.221-.124-.303-.535-1.526.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.289-1.552 3.295-1.23 3.295-1.23.655 1.65.245 2.873.12 3.176.77.84 1.232 1.911 1.232 3.221 0 4.61-2.807 5.624-5.48 5.921.43.37.823 1.102.823 2.222 0 1.606-.015 2.902-.015 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/></svg>
+          GitHub
+        </a>
+        <span class="hero__dot">•</span>
+        <a class="hero__link" href="https://linkedin.com/in/detyang22" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zM7 19H4v-9h3v9zM5.5 8.75C4.12 8.75 3 7.63 3 6.25S4.12 3.75 5.5 3.75 8 4.87 8 6.25 6.88 8.75 5.5 8.75zM20 19h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39V19h-3v-9h2.88v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.6V19z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="footer">© <span id="year"></span> Det Yang · Built with GitHub Pages</div>
+    </main>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
+  <nav class="nav">
+  <div class="nav__inner">
+    <div class="nav__links">
+      <a class="nav__link" href="#home">Home</a>
+      <a class="nav__link" href="#projects">Projects</a>
+      <a class="nav__link" href="#designs">Designs</a>
+      <a class="nav__link" href="#about">About</a>
+    </div>
+  </div>
+</nav>
 </html>
