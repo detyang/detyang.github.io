@@ -1,0 +1,276 @@
+body {
+  padding-top: 64px; /* navbar height */
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4px 0 4px;
+}
+
+.hero__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  font-size: clamp(15px, 1.8vw, 20px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+}
+
+.hero__title {
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 14px;
+}
+
+.hero__name {
+  background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.55));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__subtitle {
+  font-size: clamp(16px, 2.1vw, 20px);
+  line-height: 1.6;
+  margin: 0 0 26px;
+  max-width: 760px;
+  opacity: 0.9;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 18px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn--primary {
+  background: rgba(255,255,255,0.92);
+  color: #0b1020;
+  border-color: rgba(255,255,255,0.25);
+}
+
+.btn--primary:hover { transform: translateY(-2px); }
+.btn--ghost {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.92);
+}
+
+.btn--ghost:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.28);
+}
+
+.hero__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  opacity: 0.9;
+}
+
+.hero__link {
+  color: rgba(255,255,255,0.86);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.20);
+  padding-bottom: 2px;
+}
+
+.hero__link:hover {
+  border-bottom-color: rgba(255,255,255,0.55);
+}
+
+/* Icon styling for inline SVGs in links */
+.hero__link .icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: -0.125em;
+  margin-right: 8px;
+  fill: currentColor;
+  display: inline-block;
+}
+
+.links-bottom {
+  position: fixed;
+  left: 50%;
+  bottom: 86px; 
+  transform: translateX(-50%);
+  z-index: 65; 
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(7,10,20,0.45);
+  border: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 520px) {
+  .links-bottom { bottom: 64px; padding: 6px 10px; gap: 8px; }
+  .links-bottom .hero__link { font-size: 14px; }
+}
+
+.hero__dot { opacity: 0.55; }
+
+/* Decorative blobs */
+.hero__bg {
+  position: absolute;
+  inset: -80px -80px auto -80px;
+  height: 520px;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(32px);
+  opacity: 0.9;
+}
+
+.blob {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.22), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.blob--1 { top: 40px; left: 40px; transform: rotate(10deg); }
+.blob--2 { top: 140px; left: 420px; transform: rotate(-8deg); }
+.blob--3 { top: -20px; left: 720px; transform: rotate(14deg); }
+
+/* Page base (recommended if you don't already have global styles) */
+body {
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+  /* responsive radial gradient: sizes clamp between reasonable min/max and scale with viewport */
+  background: radial-gradient(
+    clamp(600px, 60vw, 1200px) clamp(300px, 40vh, 600px) at 20% 0%,
+    #1b2a6b 0%,
+    #0b1020 55%,
+    #070a14 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+@media (max-width: 720px) {
+  .hero { padding: 84px 18px 60px; }
+  .hero__bg { height: 460px; }
+  .blob { width: 260px; height: 260px; }
+  .blob--2 { left: 260px; }
+  .blob--3 { left: 420px; }
+}
+
+/* ===== Sticky Navbar ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  background: rgba(7, 10, 20, 0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.nav__inner {
+  max-width: 980px; /* match your container */
+  margin: 0 auto;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__brand {
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.06);
+}
+
+.nav__brand:hover {
+  text-decoration: none;
+  background: rgba(255,255,255,0.10);
+}
+
+.nav__links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: rgba(255,255,255,0.82);
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+
+.nav__link:hover {
+  text-decoration: none;
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.10);
+}
+
+/* Smooth scroll + nicer anchor positioning */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px; /* prevents navbar from covering headings */
+}
+
+/* Mobile: keep it compact */
+@media (max-width: 520px) {
+  .nav__brand { padding: 8px 9px; }
+  .nav__link  { padding: 8px 9px; }
+}
+
+/* Footer fixed to bottom-center of the viewport */
+.footer {
+  position: fixed;
+  left: 50%;
+  bottom: 4%;
+  transform: translateX(-50%);
+  z-index: 60;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  font-size: 14px;
+  color: rgba(255,255,255,0.92);
+  line-height: 1;
+  white-space: nowrap; /* keep it on a single line */
+}
